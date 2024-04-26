@@ -1,3 +1,11 @@
+import StatusCard from '@/components/status-card';
+import EventsCard from '@/components/events-card';
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <StatusCard />
+      <EventsCard />
+    </main>
+  );
 }

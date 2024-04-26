@@ -13,6 +13,7 @@ export default function Logo() {
           fill='white'
         />
       </svg>
+      <span className='sr-only'>go to home page</span>
     </Link>
   );
 }

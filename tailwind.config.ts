@@ -13,6 +13,9 @@ const config = {
       }
     },
     extend: {
+      fontFamily: {
+        outfit: ["'Outfit'", 'sans-serif']
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -49,9 +52,13 @@ const config = {
         },
         clr: {
           'midnight-slate': 'hsla(240, 12%, 18%, <alpha-value>)',
+          'midnight-black': 'hsla(240, 17%, 17%, <alpha-value>)',
           'very-dark-blue': 'hsla(240, 4%, 3%, <alpha-value>)',
           'deep-charcoal': 'hsla(240, 12%, 12%, <alpha-value>)',
-          'light-purple': 'hsla(240, 20%, 86%, <alpha-value>)'
+          'light-purple': 'hsla(240, 20%, 86%, <alpha-value>)',
+          'very-dark-gray': 'hsla(0, 0%, 8%, <alpha-value>)',
+          'purple-gray': 'hsla(240, 21%, 51%, <alpha-value>)',
+          'slate-blue': 'hsla(240, 4%, 46%, <alpha-value>)'
         }
       },
       borderRadius: {

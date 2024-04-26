@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Image from 'next/image';
 import Header from '@/components/header';
 import { ReactNode } from 'react';
-
-const inter = Inter({ subsets: ['latin'] });
+import UnSupportedMetadata from '@/components/un-supported-metadata';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <UnSupportedMetadata />
+      <body className='font-outfit'>
         <div className='container'>
           <div className='h-screen grid place-items-center py-4'>
             <div className='w-[min(100%,1364px)] h-[914px] rounded-[74px] border border-clr-midnight-slate relative isolate overflow-clip bg-clr-very-dark-blue/30 backdrop-blur-2xl'>
