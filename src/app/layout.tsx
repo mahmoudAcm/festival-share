@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Image from 'next/image';
 import Header from '@/components/header';
 import { ReactNode } from 'react';
 import UnSupportedMetadata from '@/components/un-supported-metadata';
@@ -21,8 +20,8 @@ export default function RootLayout({
       <body className='font-outfit'>
         <div className='container'>
           <div className='h-screen grid place-items-center py-4'>
-            <div className='w-[min(100%,1364px)] h-[914px] rounded-[74px] border border-clr-midnight-slate relative isolate overflow-clip bg-clr-very-dark-blue/30 backdrop-blur-2xl'>
-              <Image src='/pattern.png' fill alt='' className='-z-[1]' sizes='70vw' priority />
+            <div className='w-[min(100%,1364px)] h-[914px] rounded-[74px] border border-clr-midnight-slate relative isolate overflow-visible backdrop-blur-2xl'>
+              <div className='absolute inset-0 bg-pattern rounded-[inherit]'></div>
               <Header />
               {children}
             </div>

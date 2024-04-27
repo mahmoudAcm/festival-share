@@ -29,7 +29,7 @@ const Item = ({ label, value, classNames }: ItemProps) => {
       <div>
         <span
           className={cn(
-            'text-[0.75rem] leading-[0.9375] px-3 py-2 border border-clr-slate-blue rounded-full text-white bg-clr-slate-blue/10',
+            'text-[0.75rem] leading-[0.9375] px-3 py-2 border border-clr-slate-blue rounded-full text-white bg-clr-slate-blue/10 select-none',
             classNames?.value
           )}
         >
@@ -42,7 +42,7 @@ const Item = ({ label, value, classNames }: ItemProps) => {
 
 export default function EventsCard() {
   return (
-    <div className='flex gap-[35px] px-[35px] pt-[41px] pb-[37px] border-2 border-clr-midnight-black bg-clr-very-dark-gray/60 backdrop-blur-2xl rounded-[33px] w-fit'>
+    <div className='flex gap-[33px] px-[35px] pt-[41px] pb-[37px] border-2 border-clr-midnight-black bg-clr-very-dark-gray/60 backdrop-blur-2xl rounded-[33px]'>
       <Item
         label='Time'
         value={

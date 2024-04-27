@@ -78,3 +78,28 @@
     }
 }
 
+.event-image-clip-path {
+    /*noinspection CssInvalidPropertyValue*/
+    clip-path: path('M34.0149 61.9702C51.1275 61.9702 65 48.0977 65 30.9851V30.9851C65 13.8725 78.8725 0 95.9851 0L184.5 0C218.207 0 235.061 0 247.167 8.08946C252.408 11.5915 256.909 16.0915 260.411 21.3326C268.5 33.4394 268.5 50.2929 268.5 84V530.97C268.5 564.677 268.5 581.531 260.411 593.638C256.909 598.879 252.408 603.379 247.167 606.881C235.061 614.97 218.207 614.97 184.5 614.97H84C50.2929 614.97 33.4394 614.97 21.3326 606.881C16.0915 603.379 11.5915 598.879 8.08946 593.638C0 581.531 0 564.677 0 530.97L0 94.4702C0 76.521 14.5507 61.9702 32.5 61.9702H34.0149Z');
+}
+
+.fade-in-out {
+    animation: fade-in-out 800ms linear forwards;
+}
+
+.bg-pattern {
+    background-color: #e5e5f7;
+    opacity: 0.3;
+    background-image: linear-gradient(30deg, #b5b5c0 12%, transparent 12.5%, transparent 87%, #b5b5c0 87.5%, #b5b5c0), linear-gradient(150deg, #b5b5c0 12%, transparent 12.5%, transparent 87%, #b5b5c0 87.5%, #b5b5c0), linear-gradient(30deg, #b5b5c0 12%, transparent 12.5%, transparent 87%, #b5b5c0 87.5%, #b5b5c0), linear-gradient(150deg, #b5b5c0 12%, transparent 12.5%, transparent 87%, #b5b5c0 87.5%, #b5b5c0), linear-gradient(60deg, #b5b5c077 25%, transparent 25.5%, transparent 75%, #b5b5c077 75%, #b5b5c077), linear-gradient(60deg, #b5b5c077 25%, transparent 25.5%, transparent 75%, #b5b5c077 75%, #b5b5c077);
+    background-size: 56px 98px;
+    background-position: 0 0, 0 0, 28px 49px, 28px 49px, 0 0, 28px 49px;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
