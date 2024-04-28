@@ -7,6 +7,7 @@ import NotificationIcon from '@/icons/notification';
 import DonationIcon from '@/icons/donation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Sun from '@/components/sun';
 
 const pages = [
   { link: '/intro', title: 'Intro', icon: <IntroIcon /> },
@@ -17,7 +18,7 @@ const pages = [
 
 export default function Header() {
   return (
-    <header className='flex items-start gap-[123px] px-[73px] text-clr-light-purple font-medium leading-[1.125]'>
+    <header className='flex items-start gap-[123px] px-[73px] text-clr-light-purple font-medium leading-[1.125] relative z-10'>
       <span className='mt-4'>
         <Logo />
       </span>
@@ -42,7 +43,8 @@ export default function Header() {
         </span>
         <div className='min-w-[1.5px] h-3 bg-clr-light-purple' />
         <Link
-          href='/donate'
+          href='https://www.buymeacoffee.com/macm'
+          target='_blank'
           className='flex items-center gap-2 select-none cursor-pointer hover:text-purple-300 transition-colors'
         >
           <DonationIcon />
@@ -50,6 +52,9 @@ export default function Header() {
         </Link>
         <div className='min-w-[1.5px] h-3 bg-clr-light-purple' />
         <Image src='/profile.svg' alt='' width={24} height={24} className='select-none size-6' />
+      </div>
+      <div className='absolute top-0 left-1/2 -translate-x-1/2 -z-[1] -translate-y-[7rem]'>
+        <Sun />
       </div>
     </header>
   );

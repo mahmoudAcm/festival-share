@@ -5,6 +5,9 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMounted } from '@/hooks/useIsMounted';
+import StatusCard from '@/components/status-card';
+import PlayButton from '@/components/play-button';
+import Title from '@/components/title';
 
 const events = [
   {
@@ -30,7 +33,23 @@ export default function Home() {
 
   return (
     <main>
-      <div className='grid grid-cols-[repeat(12,100px)] gap-[15px]'>
+      <div className='grid grid-cols-[repeat(12,100px)] gap-[15px] relative isolate z-10'>
+        <div className='grid place-content-start place-items-center gap-[21px] col-start-3 -ml-[24px] mt-[324px]'>
+          <PlayButton className='shadow' />
+          <span className='text-[1.5rem] leading-[1.25] tracking-[7px] text-white'>Intro</span>
+        </div>
+        <div className='col-start-7 -ml-[50px] mt-[50px]'>
+          <Title />
+        </div>
+        <div className='col-span-7 absolute -z-[1]'>
+          <Image
+            src='/intro.png'
+            alt=''
+            width={923.44}
+            height={810.8}
+            className='-rotate-[24.2deg] -ml-[10px] mt-[20px] select-none'
+          />
+        </div>
         <div className='grid gap-[21.5px] col-start-8 col-span-6 mt-[70px]'>
           <div className='flex gap-[12.5px] relative'>
             {events.map((event, index) => (
@@ -49,7 +68,7 @@ export default function Home() {
                   alt={event.alt}
                   fill
                   className={cn(
-                    'object-cover brightness-[60%] select-none bg-gradient-to-t from-black/70 via-black/50 to-transparent',
+                    'object-cover brightness-[60%] select-none bg-gradient-to-t from-black/70 via-black/50 to-transparent ',
                     {
                       '!brightness-100': activeIndex === index
                     }
@@ -94,12 +113,12 @@ export default function Home() {
               <EventsCard />
             </div>
           </div>
-          <div className='w-[538px] h-[262px] border border-clr-midnight-slate rounded-[48px] overflow-clip relative'>
+          <div className='w-[538px] h-[262px] border border-clr-midnight-slate rounded-[48px] overflow-clip relative group'>
             <Image
               src='/gold-fish.png'
               alt=''
               fill
-              className='object-cover brightness-[80%] select-none bg-gradient-to-t from-black/70 via-black/50 to-transparent'
+              className='object-cover brightness-[80%] select-none bg-gradient-to-t from-black/70 via-black/50 to-transparent transition group-hover:scale-125'
             />
             <div className='absolute z-10 grid place-items-end gap-1 right-[34px] top-[27px]'>
               <div className='text-[2rem] leading-[1.25] font-medium text-white text-right'>
@@ -112,6 +131,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className='absolute bottom-[34px] left-[31px] z-20'>
+        <StatusCard />
       </div>
     </main>
   );

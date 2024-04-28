@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/header';
 import { ReactNode } from 'react';
 import UnSupportedMetadata from '@/components/un-supported-metadata';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,11 +18,19 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <UnSupportedMetadata />
-      <body className='font-outfit'>
-        <div className='container'>
+      <body className='font-outfit relative min-h-[130vh] py-20'>
+        <Image
+          src='/bg.png'
+          alt=''
+          width={705.38}
+          height={1240}
+          className='absolute inset-0 object-cover w-full h-full object-left-top'
+        />
+        <div className='absolute inset-0 bg-clr-midnight-black/10 backdrop-blur-md w-full h-full' />
+        <div className='container '>
           <div className='h-screen grid place-items-center py-4'>
             <div className='w-[min(100%,1364px)] h-[914px] rounded-[74px] border border-clr-midnight-slate relative isolate overflow-visible backdrop-blur-2xl'>
-              <div className='absolute inset-0 bg-pattern rounded-[inherit]'></div>
+              <div className='absolute inset-0 bg-pattern rounded-[inherit]' />
               <Header />
               {children}
             </div>
