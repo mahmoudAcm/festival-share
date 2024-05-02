@@ -1,14 +1,18 @@
 import { forwardRef } from 'react';
 import { Button, ButtonProps } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface PlayButtonProps extends ButtonProps {}
 
-const PlayButton = forwardRef<HTMLButtonElement, PlayButtonProps>(function (props, ref) {
+const PlayButton = forwardRef<HTMLButtonElement, PlayButtonProps>(function ({ className, ...props }, ref) {
   return (
     <Button
       {...props}
       ref={ref}
-      className='grid size-[142px] place-items-center outline-0 border border-white bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30'
+      className={cn(
+        'grid size-[142px] place-items-center outline-0 border border-white bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30',
+        className
+      )}
       aria-label='play the intro'
     >
       <svg width='37' height='40' viewBox='0 0 37 40' fill='none' xmlns='http://www.w3.org/2000/svg'>

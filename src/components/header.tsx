@@ -7,7 +7,9 @@ import NotificationIcon from '@/icons/notification';
 import DonationIcon from '@/icons/donation';
 import Image from 'next/image';
 import Link from 'next/link';
-import Sun from '@/components/sun';
+
+//images
+import { getBase64 } from '@/lib/getBase64';
 
 const pages = [
   { link: '/intro', title: 'Intro', icon: <IntroIcon /> },
@@ -16,9 +18,25 @@ const pages = [
   { link: '/about', title: 'About', icon: <AboutIcon /> }
 ];
 
+const ProfileImage = async () => {
+  const profileSrc = 'https://avatars.githubusercontent.com/u/62037902?v=4';
+  const base64 = await getBase64(profileSrc);
+  return (
+    <Image
+      src={profileSrc}
+      alt=''
+      width={200}
+      height={200}
+      className='select-none size-6 rounded-full object-cover'
+      placeholder='blur'
+      blurDataURL={base64}
+    />
+  );
+};
+
 export default function Header() {
   return (
-    <header className='flex items-start gap-[123px] px-[73px] text-clr-light-purple font-medium leading-[1.125] relative z-10'>
+    <header className='flex items-start gap-[123px] px-[73px] text-clr-light-purple font-medium leading-[1.125] relative z-20'>
       <span className='mt-4'>
         <Logo />
       </span>
@@ -51,10 +69,7 @@ export default function Header() {
           Donate
         </Link>
         <div className='min-w-[1.5px] h-3 bg-clr-light-purple' />
-        <Image src='/profile.svg' alt='' width={24} height={24} className='select-none size-6' />
-      </div>
-      <div className='absolute top-0 left-1/2 -translate-x-1/2 -z-[1] -translate-y-[7rem]'>
-        <Sun />
+        <ProfileImage />
       </div>
     </header>
   );
